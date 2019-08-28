@@ -5,31 +5,31 @@
   */
   
   // Setting up SVG feats
-  var svg = d3.select('svg');
-  var width = +svg.attr('width');
-  var height = +svg.attr('height');
-  var margin = { top: 10, left: 100, bottom: 10, right: 50 };
+  const svg = d3.select('svg');
+  const width = +svg.attr('width');
+  const height = +svg.attr('height');
+  const margin = { top: 10, left: 100, bottom: 10, right: 50 };
   
   //Set this to 2 to show values on nodes
-  var nodeLabelThr = 100;
+  const nodeLabelThr = 100;
 
   //Setting up color codes for flows
-  var color = d3.scaleOrdinal(d3.schemeCategory10);
+  const color = d3.scaleOrdinal(d3.schemeCategory10);
 
   //Setting up Sankey layout
-  var layout = d3.sankey()
+  const layout = d3.sankey()
                    .extent([[margin.left, margin.top],
                            [width - margin.left - margin.right, height - margin.top - margin.bottom]]);
   
   //Setting up diagram to be called below
-  var diagram = d3.sankeyDiagram()
+  const diagram = d3.sankeyDiagram()
                     .linkMinWidth(function(d) { return 0.1; })
                     .linkColor(function(d) { return color(d.color); });
 
 d3.json("input_data/Ancestor36LOGEvol.json").then(function(data){
 
-  var graph = data.graph;
-  var order = data.order;
+   graph = data.graph;
+   order = data.order;
   
   layout.linkValue(function (d) { return d.value; })
         .nodeWidth(30);
