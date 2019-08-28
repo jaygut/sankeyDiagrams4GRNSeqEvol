@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<style>
+.sankey .node {
+    font-style: bold;
+    font-size: 30px;
+    stroke-width: 30px;
+}
+
+.sankey .node-body {
+   fill: gainsboro;
+   stroke: gainsboro;
+   stroke-width: 2.5mm;
+   width: 6.5mm;
+}
+
+.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  /* fill:gainsboro; */
+  shape-rendering: crispEdges;
+  width: 20mm;
+}
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+  font-size: 75%;  
+  fill: black;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+.link:hover {
+  stroke-opacity: .5;
+}
+</style>
+
+<head>
+
+      <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+      <script type="text/javascript" src="d3/d3.js"></script>
+      <script type="text/javascript" src="d3-sankey-diagram/d3-sankey-diagram.js"></script>
+      <!-- <script src="./require.js"></script> -->
+
+</head>
+
+<svg width="2050" height="500"></svg>
+
+<script type="text/javascript" src="render_sankey.js">
+
+</script>
+
+</html>
