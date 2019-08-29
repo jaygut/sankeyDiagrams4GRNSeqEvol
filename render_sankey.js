@@ -26,7 +26,7 @@
                     .linkMinWidth(function(d) { return 0.1; })
                     .linkColor(function(d) { return color(d.color); });
 
-d3.json("input_data/Ancestor36LOGEvol.json").then(function(data){
+d3.json("input_data/Ancestor36HOGEvol.json").then(function(data){
 
    graph = data.graph;
    order = data.order;
